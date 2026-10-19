@@ -1,0 +1,50 @@
+/* 现代彩色版「富豪日报」：保留报纸骨架（报头、栏线、剪报、印章），配色明亮，卡片粗描边 + 硬投影 */
+:root{
+ --paper:#FFF8EE;--card:#FFFFFF;--ink:#1F1A17;--muted:#6E655C;
+ --red:#FF5A4E;--gold:#FFB800;--green:#14B39A;--blue:#4C8DFF;--lilac:#8B6CFF;--pink:#FF6FA5;--orange:#FF8A3D;
+ --soft:#F2ECE2;--sky:#DCEBFF;--mint:#D9F3E8;--butter:#FFF0BF;--peach:#FFE2CC;--rose:#FFE0EA;--lav:#E6E0FF;--redtint:#FFE3E0
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:750px;height:1334px;overflow:hidden}
+body{background:var(--paper);color:var(--ink);font-family:"PingFang SC","Hiragino Sans GB",sans-serif;font-size:24px;line-height:1.5}
+.serif{font-family:"Songti SC","STSong",serif;font-weight:900}
+.page{position:relative;width:750px;height:1334px;padding:36px 40px}
+.mast{text-align:center;border-bottom:5px solid var(--ink);padding-bottom:8px;position:relative}
+.mast .name{font-family:"Songti SC",serif;font-weight:900;font-size:76px;letter-spacing:18px;line-height:1.1}
+.mast .sub{display:flex;justify-content:space-between;align-items:center;font-size:19px;border-top:2px solid var(--ink);margin-top:8px;padding-top:8px;color:var(--ink)}
+.mast .sub span:first-child{background:var(--gold);padding:0 10px;border:2px solid var(--ink);font-weight:700}
+.mast .sub span:last-child{background:var(--sky);padding:0 10px;border:2px solid var(--ink)}
+.rule{border-top:2px solid var(--ink);margin:14px 0}
+.coin{display:inline-block;width:.9em;height:.9em;border-radius:50%;background:var(--gold);border:2px solid var(--ink);position:relative;vertical-align:-0.08em;margin-left:4px}
+.coin:after{content:"";position:absolute;left:50%;top:50%;width:30%;height:30%;transform:translate(-50%,-50%);background:#fff;border:1.5px solid var(--ink)}
+.card{background:var(--card);border:3px solid var(--ink);border-radius:10px}
+.stamp{position:absolute;border:4px solid var(--red);color:var(--red);font-family:"Songti SC",serif;font-weight:900;padding:2px 12px;transform:rotate(-14deg);letter-spacing:4px;background:rgba(255,255,255,.75);border-radius:6px}
+.btn{background:var(--gold);color:var(--ink);text-align:center;font-size:30px;font-weight:800;padding:16px 0;letter-spacing:6px;border:3px solid var(--ink);border-radius:14px;box-shadow:0 6px 0 var(--ink)}
+.bar{height:22px;border:2px solid var(--ink);background:#fff;position:relative;border-radius:11px;overflow:hidden}
+.bar i{position:absolute;left:0;top:0;bottom:0;border-radius:0 9px 9px 0}
+.tag{display:inline-block;border:2px solid var(--ink);padding:0 10px;font-size:18px;margin:0 6px 6px 0;background:var(--butter);border-radius:999px}
+.halftone{background-image:radial-gradient(rgba(31,26,23,.08) 1.4px,transparent 1.6px);background-size:9px 9px}
+.bubble{position:relative;background:#fff;border:3px solid var(--ink);padding:22px 26px;border-radius:18px;box-shadow:4px 4px 0 var(--ink)}
+.muted{color:var(--muted)}
+/* 通用的硬投影 */
+.sh{box-shadow:5px 5px 0 var(--ink)}
+
+/* ── 第 1 轮评审后的规范 ── */
+/* 文字专用深色（对比度 ≥ 4.5:1）；亮色只用于色块、进度条和插画 */
+:root{--red-t:#D93A2F;--blue-t:#2F6FE0;--green-t:#0B7A68;--gold-t:#9A6700}
+/* 字号下限：正文 ≥ 24px，辅助 ≥ 20px，绝不低于 18px（750 设计稿，2px = 1pt） */
+.mast .sub{font-size:20px}
+/* 统一章节标题：红色小方块 + 右侧横线 */
+.sec2{font-family:"Songti SC",serif;font-weight:900;font-size:28px;display:flex;align-items:center;gap:10px;margin-top:18px}
+.sec2:before{content:"";width:16px;height:16px;background:var(--red);border:2px solid var(--ink);border-radius:4px;flex:none}
+.sec2:after{content:"";flex:1;border-top:2px solid var(--ink)}
+/* 统一圆角与投影 */
+.btn{padding:22px 0;border-radius:14px}
+.btn2{background:#fff;color:var(--ink);text-align:center;font-size:28px;font-weight:700;padding:20px 0;letter-spacing:4px;border:3px solid var(--ink);border-radius:14px;box-shadow:0 6px 0 var(--ink)}
+.badge-red{background:var(--red-t)!important;color:#fff!important}
+/* 弹窗底层：真实界面 + 遮罩 */
+.under-frame{position:absolute;left:0;top:0;width:750px;height:1334px;border:0}
+
+/* 第 2 轮：进度条填充终点加墨线，触控高度 ≥ 88px（44pt） */
+.bar i{border-right:2.5px solid var(--ink)}
+.btn{padding:24px 0}
